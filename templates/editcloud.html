@@ -1,0 +1,16 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+<div class="container text-center">
+    <h1 class="text-center">Wordcloud {{cloudname}}</h1>
+    {% if added > 0 %}
+        <h2>Added {{added}} words</h2>
+    {% endif %}
+    <form action="/{{cloudname}}/edit" method="post">
+        <input type="text" name="words" placeholder="Enter your word or sentence">
+        <input type="submit" name="submit">
+    </form>
+    <br>
+    <a href="/{{cloudname}}/view">Zur Wolke</a>
+</div>
+{% endblock %}
